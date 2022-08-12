@@ -81,3 +81,12 @@ function removeItem(item) {
     }
   });
 };
+function resetItem(item) {
+  fs.unlinkSync('/todo.txt');
+  fs.open('/todo.txt', '', function (err, data) {
+    if (err) {
+      throw err;
+    }
+    console.log("Reset File successful");
+  })
+}
